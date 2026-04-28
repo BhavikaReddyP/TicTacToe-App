@@ -1,0 +1,10 @@
+// Method to check draw condition
+static boolean checkDraw(char[] board) {
+    // Traverse the board
+    for (int i = 0; i < board.length; i++) {
+        if (board[i] == ' ') {
+            return false; // Empty cell found → not a draw
+        }
+    }
+    return true; // No empty cells → draw
+}
