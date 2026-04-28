@@ -1,0 +1,21 @@
+// Method to check if current player has won
+static boolean checkWin(char[] board, char player) {
+
+    // All possible winning patterns
+    int[][] winPatterns = {
+        {0,1,2}, {3,4,5}, {6,7,8}, // rows
+        {0,3,6}, {1,4,7}, {2,5,8}, // columns
+        {0,4,8}, {2,4,6}           // diagonals
+    };
+
+    // Loop through patterns
+    for (int[] pattern : winPatterns) {
+        if (board[pattern[0]] == player &&
+            board[pattern[1]] == player &&
+            board[pattern[2]] == player) {
+            return true; // win detected
+        }
+    }
+
+    return false; // no win
+}
